@@ -4,6 +4,7 @@ import { Header } from './components/header';
 import "./App.css";
 import { DetailPage } from './pages/detail';
 import MainPage from './pages/main';
+import { ApplicationPage } from './pages/application';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path='detail' element={<DetailPage/>}/>
           <Route path='main' element={<MainPage/>}/>
        
+          <Route path='application' element={<ApplicationPage/>}/>
         </Route>  
       </Routes>
     </BrowserRouter>
