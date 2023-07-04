@@ -3,7 +3,7 @@ import { Color } from "../../style/color";
 
 export const Background = styled.div`
   width: 100%;
-  height: 70px;
+  height: 60px;
   background-color: ${Color.headerColor};
   display: flex;
   justify-content: center;
