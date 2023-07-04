@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/header';
 import "./App.css";
 import { DetailPage } from './pages/detail';
+import MainPage from './pages/main';
+
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Routes>
         <Route element={<Header/>}>
           <Route path='detail' element={<DetailPage/>}/>
+          <Route path='main' element={<MainPage/>}/>
+       
         </Route>  
       </Routes>
     </BrowserRouter>
