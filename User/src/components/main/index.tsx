@@ -20,23 +20,29 @@ const Main = () => {
 
   return (
     <MainContainer>
-      <Div>
-        <Dropdown
-          options={areaDropDownItem}
-          width={170}
-          onClick={handleDropdownOption}
-        />
-        <Dropdown
-          options={stateDropDownItem}
-          width={160}
-          onClick={handleDropdownOption}
-        />
-        <Dropdown
-          options={animalDropDownItem}
-          width={160}
-          onClick={handleDropdownOption}
-        />
-      </Div>
+      <NavFlex>
+        <MainTitle>
+          보호 동물
+        </MainTitle>
+        <Div>
+          <Dropdown
+            options={areaDropDownItem}
+            width={170}
+            onClick={handleDropdownOption}
+          />
+          <Dropdown
+            options={stateDropDownItem}
+            width={160}
+            onClick={handleDropdownOption}
+          />
+          <Dropdown
+            options={animalDropDownItem}
+            width={160}
+            onClick={handleDropdownOption}
+          />
+        </Div>
+      </NavFlex>
+      
       <ListFlex onClick={()=>{navigate("/detail")}}>
         {MainList.map((item) => (
             <List
@@ -58,20 +64,33 @@ const MainContainer = styled.div`
   flex-direction: column;
 `;
 
-export const Div = styled.div`
+const NavFlex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
+  margin-top: 40px;
+`;
+
+const MainTitle = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+const Div = styled.div`
     width: 55%;
     display: flex;
     gap: 30px;
-    margin-top: 40px;
 `;
 
-export const ListFlex = styled.div`
-  width: 55%;
+const ListFlex = styled.div`
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 27px;
   margin-bottom: 10%;
   margin-top: 3%;
+  margin-left: 5%;
 `;
 
 export default Main;
