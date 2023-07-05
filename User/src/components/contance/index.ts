@@ -45,14 +45,24 @@ export const MainList = [
 
 export const GraphInfromation = [
   {
+    bold: "보호소 이름",
+    medium: "대전유기견사랑쉼터",
+    state: "",
+  },
+  {
+    bold: "보호소 상세주소",
+    medium: "대전광역시 서구 갈마1동 27-14",
+    state: "",
+  },
+  {
     bold: "이름",
     medium: "뽀삐",
-    state: "1",
+    state: "",
   },
   {
     bold: "입양 상태",
     medium: "입양 가능",
-    state: "",
+    state: "1",
   },
   {
     bold: "품종",
@@ -82,6 +92,16 @@ export const GraphInfromation = [
   {
     bold: "기타 정보",
     medium: "없음",
+    state: "",
+  },
+  {
+    bold: "공고 기간",
+    medium: "2023 - 7 - 3 ~ 2023 - 7 - 13",
+    state: "",
+  },
+  {
+    bold: "입약 시작 일시",
+    medium: "2023 - 7 - 14",
     state: "",
   },
 ];
