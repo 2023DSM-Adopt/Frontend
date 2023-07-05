@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Color } from "../../style/color";
 
 
 interface Props{
@@ -12,11 +13,11 @@ const List = ({name,gender,shelter,state,stateText}:Props) => {
   return (
     <ListWrapper>
       <Img src="/assets/img/ListImg.svg"></Img>
-      <div>
+      <Flex>
         <Name>{name}</Name>
-        <img src="/assets/img/LineImg.svg"></img>
+        <Line/>
         <GenderText>{gender}</GenderText>
-      </div>
+      </Flex>
       <Shelter>{shelter}</Shelter>
       <State state={state}>{stateText}</State>
     </ListWrapper>
@@ -27,17 +28,23 @@ const State = styled.div<{ state: number }>`
   color: #ff7f00;
   font-size: 26px;
   font-weight: 700;
-  margin-top: 7px;
+  padding-left: 10px;
+  margin-bottom: 10px;
   color: ${(Props) =>
     Props.state === 1 ? "#04DF00" : Props.state === 2 ? "#FF7F00" : " #1867FF"};
 `;
+
 const ListWrapper = styled.div`
-  > div {
-    display: flex;
-    > img {
-      margin-left: 15px;
-      margin-top: 9.5px;
-    }
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    transition: all 0.3s;
+    border-radius: 10px;
   }
 `;
 
@@ -45,27 +52,38 @@ const Shelter = styled.div`
   color: #000;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 7px;
+  padding-left: 10px;
 `;
 const GenderText = styled.div`
   color: #505050;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 7px;
-  margin-left: 15px;
 `;
 
 const Img = styled.img`
   border-radius: 8px;
-  width: 330px;
+  width: 100%;
   height: 220px;
   flex-shrink: 0;
+  object-fit: cover;
 `;
 
 const Name = styled.div`
-  margin-top: 7px;
   color: #000;
   font-size: 20px;
   font-weight: 700;
+`;
+
+const Line = styled.div`
+  width: 2px;
+  height: 80%;
+  background-color: black;
+`;
+
+const Flex = styled.div`
+  display: flex;
+  align-content: center;
+  gap: 15px;
+  padding-left: 10px;
 `;
 export default List;

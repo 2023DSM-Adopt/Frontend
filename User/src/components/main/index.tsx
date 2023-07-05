@@ -8,16 +8,19 @@ import {
 import { useState } from "react";
 import List from "./list";
 import { MainList } from "../contance";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
   const [selectedOption, setSelectedOption] = useState("");
+  const navigate = useNavigate();
 
   const handleDropdownOption = (option: string) => {
     setSelectedOption(option);
   };
+
   return (
     <MainContainer>
-      <div>
+      <Div>
         <Dropdown
           options={areaDropDownItem}
           width={170}
@@ -33,27 +36,42 @@ const Main = () => {
           width={160}
           onClick={handleDropdownOption}
         />
-      </div>
-       {MainList.map((item) => (
-        <List
-        name={item.name}
-        gender={item.gender}
-        shelter={item.shelter}
-        stateText={item.stateText}
-        state={item.state}
-        />
-      ))}
+      </Div>
+      <ListFlex onClick={()=>{navigate("/detail")}}>
+        {MainList.map((item) => (
+            <List
+            name={item.name}
+            gender={item.gender}
+            shelter={item.shelter}
+            stateText={item.stateText}
+            state={item.state}
+            />
+        ))}
+      </ListFlex>
     </MainContainer>
   );
 };
 
 const MainContainer = styled.div`
->div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Div = styled.div`
+    width: 55%;
     display: flex;
     gap: 30px;
     margin-top: 40px;
-    margin-left: 339px;
-}
+`;
+
+export const ListFlex = styled.div`
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 10%;
+  margin-top: 3%;
 `;
 
 export default Main;

@@ -14,4 +14,6 @@ export const LogoFlex = styled.div`
   width: 70%;
 `;
 
-export const Logo = styled.img``;
+export const Logo = styled.img`
+  cursor: pointer;
+`;
