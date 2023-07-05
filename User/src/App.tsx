@@ -14,7 +14,6 @@ function App() {
         <Route element={<Header/>}>
           <Route path='detail' element={<DetailPage/>}/>
           <Route path='main' element={<MainPage/>}/>
-       
           <Route path='application' element={<ApplicationPage/>}/>
         </Route>  
       </Routes>

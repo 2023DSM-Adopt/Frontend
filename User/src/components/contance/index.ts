@@ -85,3 +85,30 @@ export const GraphInfromation = [
     state: "",
   },
 ];
+
+export const DetailInformation = [
+  {
+    bold: "이름",
+    medium: "뽀삐",
+  },
+  {
+    bold: "품종",
+    medium: "웰시코기",
+  },
+  {
+    bold: "입양 상태",
+    medium: "입양 가능",
+  },
+  {
+    bold: "성별",
+    medium: "암컷",
+  },
+  {
+    bold: "지역 분류",
+    medium: "충청남도 논산시 시민로 258번길 9",
+  },
+  {
+    bold: "관리 번호",
+    medium: "1A2B3C",
+  },
+];

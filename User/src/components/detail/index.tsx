@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { GraphInfromation } from "../contance";
 import * as _ from "./style";
 
 export const Detail = () => {
 
     const dataList = GraphInfromation;
+    const navigate = useNavigate();
 
     return(
         <_.Backgorund>
@@ -22,7 +24,7 @@ export const Detail = () => {
                         })
                     }
                 </_.GraphList>
-                <_.ApplicationBtn>입양 신청하기</_.ApplicationBtn>
+                <_.ApplicationBtn onClick={()=>{navigate("/application")}}>입양 신청하기</_.ApplicationBtn>
             </_.GraphFlex>
         </_.Backgorund>
     );
