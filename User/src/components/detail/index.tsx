@@ -6,17 +6,18 @@ export const Detail = () => {
 
     const dataList = GraphInfromation;
     const navigate = useNavigate();
+    const img_url = localStorage.getItem("img_url");
 
     return(
         <_.Backgorund>
-            <_.MainImg src="/assets/img/DetailImg.svg"/>
+            <_.MainImg src={`${img_url}`}/>
             <_.GraphFlex>
                 <_.GraphTitle>정보</_.GraphTitle>
                 <_.GraphList>
                     {
-                        dataList.map(data=>{
+                        dataList.map((data, index)=>{
                             return(
-                                <_.Graph>
+                                <_.Graph key={index}>
                                     <_.GraphBold>{data.bold}</_.GraphBold>
                                     <_.GraphMedium graphState={data.state}>{data.medium}</_.GraphMedium>
                                 </_.Graph>

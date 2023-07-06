@@ -1,18 +1,30 @@
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import { Color } from "../../style/color";
+// import { Color } from "../../style/color";
 
 
 interface Props{
   name:string,
-        gender:string,
-        shelter:string,
-        state:number,
-        stateText:string
+  gender:string,
+  shelter:string,
+  state:number,
+  stateText:string,
+  img: string,
 }
-const List = ({name,gender,shelter,state,stateText}:Props) => {
+const List = ({name,gender,shelter,state,stateText,img}:Props) => {
+
+  const navigate = useNavigate();
+
+  console.log(img)
+
+  const hadlePageRouter = () =>{
+    localStorage.setItem("img_url", img);
+    navigate("/detail");
+  }
+
   return (
-    <ListWrapper>
-      <Img src="/assets/img/ListImg.svg"></Img>
+    <ListWrapper onClick={hadlePageRouter}>
+      <Img src={img}></Img>
       <Flex>
         <Name>{name}</Name>
         <Line/>

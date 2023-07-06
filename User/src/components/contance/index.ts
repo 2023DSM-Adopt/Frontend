@@ -2,44 +2,50 @@ export const MainList = [
   {
     name: "뽀삐",
     gender: "수컷",
-    shelter: "어쩌고저쩌고보호소",
+    shelter: "대전유기견사랑쉼터",
     stateText: "입양 가능",
+    image_url: "/assets/img/dog/Dog1.jpeg",
     state: 1,
   },
   {
-    name: "뽀삐",
-    gender: "수컷",
-    shelter: "어쩌고저쩌고보호소",
-    stateText: "입양 가능",
-    state: 1,
-  },
-  {
-    name: "뽀삐",
+    name: "쿠키",
     gender: "암컷",
-    shelter: "어쩌고저쩌고보호소",
-    stateText: "입양 가능",
-    state: 1,
+    shelter: "대전유기견사랑쉼터",
+    image_url: "/assets/img/dog/Dog2.jpeg",
+    stateText: "공고중",
+    state: 3,
   },
   {
-    name: "뽀삐",
-    gender: "수컷",
-    shelter: "어쩌고저쩌고보호소",
+    name: "호두",
+    gender: "암컷",
+    shelter: "대전유기견사랑쉼터",
+    image_url: "/assets/img/dog/Dog3.jpeg",
     stateText: "입양 예정",
     state: 2,
   },
   {
-    name: "뽀삐",
+    name: "루이",
     gender: "수컷",
-    shelter: "어쩌고저쩌고보호소",
+    shelter: "대전유기견사랑쉼터",
+    image_url: "/assets/img/dog/Dog4.jpeg",
+    stateText: "입양 예정",
+    state: 2,
+  },
+  {
+    name: "순삼이",
+    gender: "수컷",
+    shelter: "대전유기견사랑쉼터",
+    image_url: "/assets/img/dog/Dog5.jpeg",
     stateText: "공고중",
     state: 3,
   },
   {
-    name: "뽀삐",
+    name: "시바",
     gender: "수컷",
-    shelter: "어쩌고저쩌고보호소",
-    stateText: "공고중",
-    state: 3,
+    shelter: "대전유기견사랑쉼터",
+    image_url: "/assets/img/dog/Dog6.jpeg",
+    stateText: "입양 가능",
+    state: 1,
   },
 ];
 
@@ -66,7 +72,7 @@ export const GraphInfromation = [
   },
   {
     bold: "품종",
-    medium: "웹시코기",
+    medium: "믹스",
     state: "",
   },
   {
@@ -76,12 +82,17 @@ export const GraphInfromation = [
   },
   {
     bold: "몸무게",
-    medium: "20kg",
+    medium: "1.9kg",
+    state: "",
+  },
+  {
+    bold: "나이",
+    medium: "4살",
     state: "",
   },
   {
     bold: "지역 분류",
-    medium: "충청남도 논산시 시민로 258번길 9",
+    medium: "대전광역시",
     state: "",
   },
   {
@@ -113,7 +124,7 @@ export const DetailInformation = [
   },
   {
     bold: "품종",
-    medium: "웰시코기",
+    medium: "믹스",
   },
   {
     bold: "입양 상태",
@@ -125,7 +136,7 @@ export const DetailInformation = [
   },
   {
     bold: "지역 분류",
-    medium: "충청남도 논산시 시민로 258번길 9",
+    medium: "대전광역시",
   },
   {
     bold: "관리 번호",

@@ -5,15 +5,38 @@ import {
   stateDropDownItem,
   animalDropDownItem,
 } from "../constant";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import List from "./list";
-import { MainList } from "../contance";
 import { useNavigate } from "react-router-dom";
+import { MainList } from "../contance";
+import axios from "axios";
 
 const Main = () => {
-  const [selectedOption, setSelectedOption] = useState("");
-  const navigate = useNavigate();
 
+  // const [ListData, setListData] = useState<string[]>([""]);
+
+  // useEffect(()=>{
+  //   axios({
+  //     method: 'get',
+  //     url: 'https://d2af-119-203-74-135.ngrok-free.app/animals/list?town=부산광역시&animal_type=&status=',
+  //     params:{
+  //       town: "",
+  //       animal_type: "",
+  //       status: "",
+  //     }
+  //   }).then(function(result){
+  //     setListData(result.data);
+  //     console.log(result.data)
+  //     console.log(ListData);
+  //   })
+  //   .catch(function(error){
+  //     console.log(error);
+  //   })
+  // },[])
+
+  const DataList = MainList;
+
+  const [selectedOption, setSelectedOption] = useState("");
   const handleDropdownOption = (option: string) => {
     setSelectedOption(option);
   };
@@ -43,16 +66,22 @@ const Main = () => {
         </Div>
       </NavFlex>
       
-      <ListFlex onClick={()=>{navigate("/detail")}}>
-        {MainList.map((item) => (
-            <List
-            name={item.name}
-            gender={item.gender}
-            shelter={item.shelter}
-            stateText={item.stateText}
-            state={item.state}
-            />
-        ))}
+      <ListFlex>
+        {
+          DataList.map((data, index) => {
+            return(
+              <List
+              name={data.name}
+              gender={data.gender}
+              shelter={data.shelter}
+              stateText={data.stateText}
+              state={data.state}
+              img={data.image_url}
+              key={index}
+              />
+            );
+            })
+        }
       </ListFlex>
     </MainContainer>
   );

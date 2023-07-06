@@ -1,15 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import { Calender } from "../common/calender";
 import { DetailInformation } from "../contance";
 import * as _ from "./style";
 
 const detailData = DetailInformation; 
 
+const img_url = localStorage.getItem("img_url");
+
+
 export const Application = () =>{
+    const navigate = useNavigate();
     return(
         <_.Background>
             <_.PetInformationFlex>
                 <_.Flex>
-                    <_.PetImg src="/assets/img/DetailImg.svg"/>
+                    <_.PetImg src={`${img_url}`}/>
                     <_.FlexFlex>
                         {
                             detailData.map((data, index) => (
@@ -48,7 +53,7 @@ export const Application = () =>{
                     </_.GraphFlex>
                 </_.Graph>
                 <_.BtnFlex>
-                    <_.ApplyBtn>입양 신청</_.ApplyBtn>
+                    <_.ApplyBtn onClick={()=>{navigate("/main")}}>입양 신청</_.ApplyBtn>
                 </_.BtnFlex>
             </_.ApplicationInfoFlex>
         </_.Background>
